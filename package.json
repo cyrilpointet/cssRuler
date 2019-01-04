@@ -1,0 +1,22 @@
+{
+  "name": "css-ruler",
+  "version": "1.0.0",
+  "description": "lightweight library for css rules management",
+  "main": "cssRuler.js",
+  "scripts": {
+    "test": "mocha --reporter spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cyrilpointet/cssRuler.git"
+  },
+  "keywords": [
+    "css"
+  ],
+  "author": "Cyril Pointet <pointet.cyril@gmail.com> (http://cyrilpointet.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cyrilpointet/cssRuler/issues"
+  },
+  "homepage": "https://github.com/cyrilpointet/cssRuler#readme"
+}

@@ -1,7 +1,16 @@
 var cssRuler = module.exports = {};
+/**
+ * get all stylesheets
+ * @return {Array}
+ */
 cssRuler.getStylesheets = function () {
     return document.styleSheets;
 };
+/**
+ * Get a css rule by selector
+ * @param {string} css selector
+ * @return {CSSRule}
+ */
 cssRuler.getRule = function (cssSelector) {
     var mysheet = document.styleSheets;
     if (typeof (cssSelector) !== 'string' || mysheet.length < 1) {
@@ -17,6 +26,11 @@ cssRuler.getRule = function (cssSelector) {
     }
     return false
 };
+/**
+ * Delete css rule by selector
+ * @param {string} css selector
+ * @return {boolean}
+ */
 cssRuler.deleteRule = function (cssSelector) {
     var mysheet = document.styleSheets;
     if (typeof (cssSelector) !== 'string' || mysheet.length < 1) {
@@ -33,6 +47,12 @@ cssRuler.deleteRule = function (cssSelector) {
     }
     return false
 };
+/**
+ * Edit an existing css rule by selector
+ * @param {string} css selector
+ * @param {object} style object
+ * @return {boolean}
+ */
 cssRuler.editRule = function (cssSelector, rule) {
     var mysheet = document.styleSheets;
     if (typeof (cssSelector) !== 'string' || typeof (rule) !== 'object' || mysheet.length < 1) {
@@ -51,6 +71,12 @@ cssRuler.editRule = function (cssSelector, rule) {
     }
     return false
 };
+/**
+ * Add a new css rule
+ * @param {string} css selector
+ * @param {object} style object
+ * @return {boolean}
+ */
 cssRuler.addRule = function (cssSelector, rule) {
     var mysheet = document.styleSheets;
     if (typeof (cssSelector) !== 'string' || typeof (rule) !== 'object' || mysheet.length < 1) {
