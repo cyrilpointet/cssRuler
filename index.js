@@ -4,7 +4,11 @@ var cssRuler = module.exports = {};
  * @return {Array}
  */
 cssRuler.getStylesheets = function () {
-    return document.styleSheets;
+    if (document) {
+        return document.styleSheets;
+    } else {
+        return false
+    }
 };
 /**
  * Get a css rule by selector
@@ -12,7 +16,12 @@ cssRuler.getStylesheets = function () {
  * @return {CSSRule}
  */
 cssRuler.getRule = function (cssSelector) {
-    var mysheet = document.styleSheets;
+    var mysheet = null;
+    if (document) {
+        mysheet = document.styleSheets;
+    } else {
+        return false
+    }
     if (typeof (cssSelector) !== 'string' || mysheet.length < 1) {
         return false;
     }
@@ -32,7 +41,12 @@ cssRuler.getRule = function (cssSelector) {
  * @return {boolean}
  */
 cssRuler.deleteRule = function (cssSelector) {
-    var mysheet = document.styleSheets;
+    var mysheet = null;
+    if (document) {
+        mysheet = document.styleSheets;
+    } else {
+        return false
+    }
     if (typeof (cssSelector) !== 'string' || mysheet.length < 1) {
         return false;
     }
@@ -54,7 +68,12 @@ cssRuler.deleteRule = function (cssSelector) {
  * @return {boolean}
  */
 cssRuler.editRule = function (cssSelector, rule) {
-    var mysheet = document.styleSheets;
+    var mysheet = null;
+    if (document) {
+        mysheet = document.styleSheets;
+    } else {
+        return false
+    }
     if (typeof (cssSelector) !== 'string' || typeof (rule) !== 'object' || mysheet.length < 1) {
         return false
     }
@@ -78,7 +97,12 @@ cssRuler.editRule = function (cssSelector, rule) {
  * @return {boolean}
  */
 cssRuler.addRule = function (cssSelector, rule) {
-    var mysheet = document.styleSheets;
+    var mysheet = null;
+    if (document) {
+        mysheet = document.styleSheets;
+    } else {
+        return false
+    }
     if (typeof (cssSelector) !== 'string' || typeof (rule) !== 'object' || mysheet.length < 1) {
         return false
     }
